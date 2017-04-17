@@ -119,16 +119,17 @@ namespace AnswerMe2017.Services
             var str = Encoding.UTF8.GetString(Convert.FromBase64String(token));
             var slice = str.Split('|');
             var userInfo = GetUserInfo(slice[0]);
-            string userinfoCombine = userInfo.Name + userInfo.Phone + userInfo.StudentNumber + slice[1].ToString();
+            if (userInfo != null)
+            {
+                string userinfoCombine = userInfo.Name + userInfo.Phone + userInfo.StudentNumber + slice[1].ToString();
 
-            if (slice[2].Equals(GetMd5Hash(userinfoCombine)))
-            {
-                return userInfo;
+                if (slice[2].Equals(GetMd5Hash(userinfoCombine)))
+                {
+                    return userInfo;
+                }
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
 
         }
 
