@@ -72,21 +72,15 @@ namespace AnswerMe2017.Controllers
                 userInfo.Grade = grade;
                 userInfo.Time = answers.UseTime;
             }
-
+                
             UserService.Instance.RegisterOrUpdate(userInfo);
             // 更新用户成绩
 
             return new ResponseWrapper
             {
                 IsSuccessful = true,
-                Body = new AnswerResult
-                {
-                    Grade = grade,
-                    UseTime = answers.UseTime,
-                    BestGrade = userInfo.Grade,
-                    BestTime = userInfo.Time,
-                    BestRank = QuestionService.Instance.GetRank(userInfo.Grade)
-                }
+                //Body = QuestionService.Instance.ValidAnswers(answers.AnswerList)
+                Body = result
             };
         }
     }
