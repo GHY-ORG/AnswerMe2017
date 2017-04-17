@@ -20,9 +20,11 @@ var updateTop10 = function (top10Result) {
     //console.log(top10Result);
     if (top10Result.IsSuccessful) {
         $(top10Result.Body).each(function (index, vaule) {
-            top10Line.children(".player")[index].innerHTML = vaule.Name + "+" + vaule.StudentNumber || "匿名";
+            var playName = vaule.Name;
+            if( playName.length>5 ) playName = playName.substr(0,5)+"...";
+            top10Line.children(".player")[index].innerHTML = playName + " " + vaule.StudentNumber.substr(0,2) + "****" + vaule.StudentNumber.substr(-2,2) || "匿名";
             top10Line.children(".accuracy")[index].innerHTML = vaule.Grade * 100 + "%";
-            top10Line.children(".time")[index].innerHTML = vaule.Time + "s";
+            top10Line.children(".time")[index].innerHTML = parseInt(vaule.Time/60) + "分" + vaule.Time%60 + "秒" ;
         });
     }
 }
