@@ -54,5 +54,14 @@ namespace AnswerMe2017.Services
                 return result;
             }
         }
+
+        public int GetRank(decimal grade)
+        {
+            using (var db = new dbEntities())
+            {
+                var userRank = db.User.Where(model => model.Grade > grade).Count() + 1;
+                return userRank;
+            }
+        }
     }
 }
