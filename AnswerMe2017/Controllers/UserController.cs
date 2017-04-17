@@ -33,6 +33,30 @@ namespace AnswerMe2017.Controllers
             };
         }
 
+        [Route("valid")]
+        [HttpGet]
+        public ResponseWrapper ValidUserCookie()
+        {
+            var cookie = Request.Headers.GetCookies("Token").FirstOrDefault();
+            if (cookie != null)
+            {
+                var userInfo = UserService.Instance.ValidToken(cookie["Token"].Value);
+                if (userInfo != null)
+                    return new ResponseWrapper
+                    {
+                        IsSuccessful = true,
+                        Body = new UserInfo
+                        {
+                            Name = userInfo.Name,
+                            Phone = userInfo.Phone,
+                            StudentNumber = userInfo.StudentNumber
+                        }
+                    };
+            }
+            return new ResponseWrapper { IsSuccessful = false };
+        }
+
+
         [Route("top10")]
         [HttpGet]
         public ResponseWrapper GetTop10User()

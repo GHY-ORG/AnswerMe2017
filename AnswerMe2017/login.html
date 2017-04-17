@@ -5,12 +5,12 @@
     <title>login</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="css/reset.css" rel="stylesheet" />
-    <script type="text/javascript" src="script/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <img src="img/common/back.jpg" alt="" class="img-holder">
     <div class="panel">
-       <div class="info-holder">
+        <div class="info-holder">
             <div class="input-holder">
                 姓 名
                 <input name="name" type="text">
@@ -23,35 +23,49 @@
                 联 系 方 式
                 <input name="phone" type="text">
             </div>
-       </div>
-       <button class="btnn login-btn">登 陆</button>
-       <a class="btnn" href="answer.html">返 回</a>
-        <script>
-      $(".login-btn").click(function () {
-        var sendData = {
-            Name: $("input[name='name']").val(),
-            StudentNumber: $("input[name='studentnumber']").val(),
-            Phone: $("input[name='phone']").val(),
-        }
+        </div>
+        <button class="btnn login-btn">登 陆</button>
+        <a class="btnn" href="answer.html">返 回</a>
 
-        $.ajax({
-            method: "POST",
-            url: "api/user/login",
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify(sendData),
-            success: function (result) {
-                console.log(result);
-                if (result.IsSuccessful) {
-                    $(window).attr('location', 'problem.html');
-                }
-            }
-
-        });
-
-    });
-        </script>
 
     </div>
+    <script>
+        $(function () {
+
+            $.getJSON("api/user/valid", function (data, textStatus, jqXHR) {
+                if (data.IsSuccessful) {
+                    $("input[name='name']").val(data.Body.Name);
+                    $("input[name='studentnumber']").val(data.Body.StudentNumber);
+                    $("input[name='phone']").val(data.Body.Phone)
+                }
+            });
+
+            $(".login-btn").click(function () {
+                var sendData = {
+                    Name: $("input[name='name']").val(),
+                    StudentNumber: $("input[name='studentnumber']").val(),
+                    Phone: $("input[name='phone']").val(),
+                }
+
+                $.ajax({
+                    method: "POST",
+                    url: "api/user/login",
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: JSON.stringify(sendData),
+                    success: function (result) {
+                        console.log(result);
+                        if (result.IsSuccessful) {
+                            $(window).attr('location', 'problem.html');
+                        }
+                    }
+
+                });
+
+            });
+        })
+
+    </script>
+
 </body>
 </html>

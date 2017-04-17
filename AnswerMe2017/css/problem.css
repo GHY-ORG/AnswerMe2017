@@ -226,6 +226,7 @@ a{
     border-radius: 12px;
     line-height: 24px;
     background: white;
+    cursor: pointer;
 }
 .number:hover{
     background:#eee;
@@ -234,10 +235,15 @@ a{
     color:white;
     background: #297fbf;
 }
-/*--------------for input--------------------------------*/
-#time-input{
-    display: none;
-}
+
+    .number-onshow:hover {
+        color: white;
+        background: #2873ac;
+    }
+    /*--------------for input--------------------------------*/
+    #time-input {
+        display: none;
+    }
 #answer-input{
     display: none;
 }
