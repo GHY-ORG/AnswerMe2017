@@ -36,17 +36,70 @@ $("#finish").click(function () {
     var usetime = curMin * 60 + curs1 * 10 + curs2;
     usetime = 300 - usetime;
 
-    var sendData = {};
-
-
-    sendData["AnswerList"] = [];
-    $.each(questions, function (index, value) {
-        sendData["AnswerList"].push({
-            "QuestionId": questions[index].getAttribute("ques-id"),
-            "AnswerBody": answers[index] || "E"
-        });
-    });
-    sendData["UseTime"] = usetime || 9999;
+    var sendData = {
+        "AnswerList": [
+            {
+                "QuestionId": 1,
+                "AnswerBody": answers[0]
+            },
+            {
+                "QuestionId": 2,
+                "AnswerBody": answers[1]
+            },
+            {
+                "QuestionId": 3,
+                "AnswerBody": answers[2]
+            },
+            {
+                "QuestionId": 4,
+                "AnswerBody": answers[3]
+            },
+            {
+                "QuestionId": 5,
+                "AnswerBody": answers[4]
+            },
+            {
+                "QuestionId": 6,
+                "AnswerBody": answers[5]
+            },
+            {
+                "QuestionId": 7,
+                "AnswerBody": answers[6]
+            },
+            {
+                "QuestionId": 8,
+                "AnswerBody": answers[7]
+            },
+            {
+                "QuestionId": 9,
+                "AnswerBody": answers[8]
+            },
+            {
+                "QuestionId": 10,
+                "AnswerBody": answers[9]
+            },
+            {
+                "QuestionId": 11,
+                "AnswerBody": answers[10]
+            },
+            {
+                "QuestionId": 12,
+                "AnswerBody": answers[11]
+            },
+            {
+                "QuestionId": 13,
+                "AnswerBody": answers[12]
+            },
+            {
+                "QuestionId": 14,
+                "AnswerBody": answers[13]
+            },
+            {
+                "QuestionId": 15,
+                "AnswerBody": answers[14]
+            }],
+        "UseTime": usetime
+    }
 
     $.ajax({
         method: "POST",
@@ -55,7 +108,7 @@ $("#finish").click(function () {
         dataType: "json",
         data: JSON.stringify(sendData),
         success: function (result) {
-            console.log(result);
+            console.log("here");
         }
 
     })
