@@ -189,7 +189,6 @@
     </Compile>
     <Compile Include="MessageHandlers\AuthMessageHandler.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Models\AnswerResult.cs" />
     <Compile Include="Models\Answers.cs" />
     <Compile Include="Models\ChoiceQuestion.cs" />
     <Compile Include="Models\Question.cs" />
