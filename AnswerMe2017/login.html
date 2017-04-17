@@ -20,7 +20,7 @@
                 <input name="studentnumber" type="number" max="8" min="8" placeholder="研究生仅填学号前八位">
             </div>
             <div class="input-holder">
-                联 系 方 式
+                联 系 电 话
                 <input name="phone" type="number" max="11" min="8">
             </div>
         </div>
@@ -53,10 +53,16 @@
                     contentType: "application/json",
                     dataType: "json",
                     data: JSON.stringify(sendData),
+                    beforeSend: function () {
+                        $(".login-btn").attr("disabled", "disabled");
+                    },
                     success: function (result) {
                         console.log(result);
                         if (result.IsSuccessful) {
                             $(window).attr('location', 'problem.html');
+                        } else {
+                            alert(result.ErrorMessage);
+                            $(".login-btn").removeAttr("disabled");
                         }
                     }
 
