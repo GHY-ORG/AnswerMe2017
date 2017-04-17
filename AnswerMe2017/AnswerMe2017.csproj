@@ -164,6 +164,7 @@
     <Content Include="script\recordTime.js" />
     <Content Include="script\showTop10.js" />
     <Content Include="script\shwoQues.js" />
+    <Content Include="script\store.legacy.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
