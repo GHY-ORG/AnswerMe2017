@@ -18,9 +18,9 @@ function changeByTime() {
         if (curs1 == -1) {
             curs1 = 5;
             curMin--;
-            if (!curMin) {
+            if (curMin == -1) {
                 $("#finish").click();
-               // document.getElementById("finish").onclick();
+                // document.getElementById("finish").onclick();
             }
         }
     }

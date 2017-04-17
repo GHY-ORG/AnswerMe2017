@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>请回答2017</title>
-	<link rel="stylesheet" href="css\reset.css">
-	<link rel="stylesheet" href="css\bootstrap.min.css">
-	<link rel="stylesheet" href="css\result.css">
+    <link rel="stylesheet" href="css\reset.css">
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="css\result.css">
 </head>
 <body>
-	<nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
         <div class="nav-head m">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -56,13 +56,13 @@
         </div>
     </nav>
 
-	<div class="img-holder"></div>
+    <div class="img-holder"></div>
 
-	<div class="panel-holder">
+    <div class="panel-holder">
         <div class="content-holder">
             <div class="brief-title">
                 <img src="img/common/answer.png">
-			    放我答题！
+                放我答题！
             </div>
             <div class="discription">
                 <p id="para1">本次答题结束</p>
@@ -70,11 +70,11 @@
                 <p id="para3">最佳答题正确率是 所用时间是 目前排名是</p>
                 <a href="problem.html" class="chanllenge">再来一次</a>
             </div>
-        </div>   
+        </div>
     </div>
-	    
-	<div class="foot">
-		<div class="foot-left">
+
+    <div class="foot">
+        <div class="foot-left">
             <img src="img/common/logo2.png">
             <h4>光华园|GHY.CN</h4>
         </div>
@@ -84,27 +84,49 @@
                 西南财经大学党委宣传统战部 前进动力工作室 TEL:028—87092700
             </h5>
         </div>
-	</div>
+    </div>
     <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
     <script>
-    $(document).ready(function () {
-        var sendData = {}
+        $(document).ready(function () {
+            //var sendData = {}
 
-        $.ajax({
-            method: "GET",
-            url: "api/question/choicequestion?count=" + 15,
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify(sendData),
-            success: function (result) {
-                console.log(result);
-                
+            //$.ajax({
+            //    method: "GET",
+            //    url: "api/question/choicequestion?count=" + 15,
+            //    contentType: "application/json",
+            //    dataType: "json",
+            //    data: JSON.stringify(sendData),
+            //    success: function (result) {
+            //        console.log(result);
+            //        $("#para2").innerText = "本次答题正确率是" + " 所用时间是";
+            //        $("#para3").innerText = "最佳答题正确率是" + " 所用时间是" + "目前排名是";
+            //    }
+            //});
 
-                $("#para2").innerText = "本次答题正确率是" + " 所用时间是";
-                $("#para3").innerText = "最佳答题正确率是" + " 所用时间是" + "目前排名是";
+            //从cookie拿到的数据
+            var answerResult = JSON.parse(getCookie("AnswerResult"));
+
+            console.log(answerResult);
+            if (answerResult != null) {
+                var grade = answerResult.Body.Grade * 100 + "";
+                var bestGrade = answerResult.Body.BestGrade * 100 + "";
+                $("#para2")[0].innerHTML = "本次答题正确率是" + grade.substring(0, grade.indexOf(".") + 3) + "% 所用时间是" + answerResult.Body.UseTime + "s";
+                $("#para3")[0].innerHTML = "最佳答题正确率是" + bestGrade.substring(0, bestGrade.indexOf(".") + 3) + "% 所用时间是" + answerResult.Body.BestTime + "s" + " 目前排名是" + answerResult.Body.BestRank;
             }
-        });
-    })
+
+            function getCookie(c_name) {
+                if (document.cookie.length > 0) {
+                    c_start = document.cookie.indexOf(c_name + "=");
+                    if (c_start != -1) {
+                        c_start = c_start + c_name.length + 1;
+                        c_end = document.cookie.indexOf(";", c_start);
+                        if (c_end == -1) c_end = document.cookie.length;
+                        return unescape(document.cookie.substring(c_start, c_end));
+                    }
+                }
+                return "";
+            }
+        })
     </script>
 
 </body>
