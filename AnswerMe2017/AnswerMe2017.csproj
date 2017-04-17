@@ -164,7 +164,6 @@
     <Content Include="script\recordTime.js" />
     <Content Include="script\showTop10.js" />
     <Content Include="script\shwoQues.js" />
-    <Content Include="script\store.legacy.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +189,7 @@
     </Compile>
     <Compile Include="MessageHandlers\AuthMessageHandler.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\AnswerResult.cs" />
     <Compile Include="Models\Answers.cs" />
     <Compile Include="Models\ChoiceQuestion.cs" />
     <Compile Include="Models\Question.cs" />
