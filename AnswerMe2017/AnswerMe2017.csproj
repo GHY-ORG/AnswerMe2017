@@ -152,6 +152,7 @@
     <Content Include="img\time\8.png" />
     <Content Include="img\time\9.png" />
     <Content Include="img\time\dot.png" />
+    <Content Include="index-mobile.html" />
     <Content Include="index.html" />
     <Content Include="login-mobile.html" />
     <Content Include="login.html" />
