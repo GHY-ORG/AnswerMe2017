@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login-mobile.css">
+    <link href="css/reset.css" rel="stylesheet" />
+    <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="img-holder"></div>
+    <div class="panel">
+       <div class="info-holder">
+            <div class="input-holder">
+                姓 名
+                <input type="text">
+            </div>
+            <div class="input-holder">
+                学 号
+                <input type="text" placeholder="研究生仅填学号前八位">
+            </div>
+            <div class="input-holder">
+                联 系 方 式
+                <input type="text">
+            </div>
+       </div>
+        <a class="btnn login-btn" href="problem.html">登 陆</a>
+        <a class="btnn" href="answer.html">返 回</a>
+        <script>
+    $(".login-btn").click(function () {
+        var sendData = {
+            Name: $("input[name='name']").val(),
+            StudentNumber: $("input[name='studentnumber']").val(),
+            Phone: $("input[name='phone']").val(),
+        }
+
+        $.ajax({
+            method: "POST",
+            url: "api/user/login",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(sendData),
+            success: function (result) {
+                console.log(result);
+
+            },
+            error: function (xmlHttpRequest, textStatus, errorthrown) {
+                console.log(xmlHttpRequest);
+
+                $("input[name='name']").val("请按格式正确输入");
+                $("input[name='studentnumber']").val("请按格式正确输入");
+                $("input[name='phone']").val("请按格式正确输入");
+
+            }
+        });
+
+    });
+        </script>
+
+    </div>
+</body>
+</html>

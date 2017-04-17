@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请回答2017</title>
+	<link rel="stylesheet" href="css\reset.css">
+	<link rel="stylesheet" href="css\bootstrap.min.css">
+	<link rel="stylesheet" href="css\result.css">
+</head>
+<body>
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="nav-head m">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="logo" href="">
+                    <img src="img/common/logo.png">
+                </a>
+                <a class="navbar-brand" href="#">GHY.CN</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://www.ghy.cn/swufenews/">新闻</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ghy.cn/idea08/">思想</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ghy.cn/study09/">学习</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ghy.cn/life/">生活</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ghy.cn/lit08/">文苑</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ghy.cn/music09/">音乐</a>
+                    </li>
+                    <li>
+                        <a href="http://www.ghy.cn/movie11/">电影</a>
+                    </li>
+                    <li>
+                        <a href="http://soft.ghy.cn/">软件</a>
+                    </li>
+                    <li>
+                        <a href="http://bbs.ghy.cn/">草堂茗香</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<div class="img-holder"></div>
+
+	<div class="panel-holder">
+        <div class="content-holder">
+            <div class="brief-title">
+                <img src="img/common/answer.png">
+			    放我答题！
+            </div>
+            <div class="discription">
+                <p id="para1">本次答题结束</p>
+                <p id="para2">本次答题正确率是 所用时间是</p>
+                <p id="para3">最佳答题正确率是 所用时间是 目前排名是</p>
+                <a href="problem.html" class="chanllenge">再来一次</a>
+            </div>
+        </div>   
+    </div>
+	    
+	<div class="foot">
+		<div class="foot-left">
+            <img src="img/common/logo2.png">
+            <h4>光华园|GHY.CN</h4>
+        </div>
+        <div class="foot-right">
+            <h5 style="text-align: right;">
+                Copyright 2001-2016 GHY.cn All rights reserved. 蜀ICP备07004602号<br>
+                西南财经大学党委宣传统战部 前进动力工作室 TEL:028—87092700
+            </h5>
+        </div>
+	</div>
+    <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        var sendData = {}
+
+        $.ajax({
+            method: "GET",
+            url: "api/question/choicequestion?count=" + 15,
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(sendData),
+            success: function (result) {
+                console.log(result);
+                
+
+                $("#para2").innerText = "本次答题正确率是" + " 所用时间是";
+                $("#para3").innerText = "最佳答题正确率是" + " 所用时间是" + "目前排名是";
+            }
+        });
+    })
+    </script>
+
+</body>
+</html>

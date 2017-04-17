@@ -1,0 +1,217 @@
+﻿html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+/*---------------------------nav-------------------------------*/
+.nav-head{
+    padding:0 15%;
+}
+.navbar-inverse{opacity: 0.8;}
+.logo{
+	height:50px;
+	float: left;
+	margin:0 2px 0 20px;
+}
+.navbar-nav>li {
+    margin-right: 26px;
+}
+/*---------------------------head------------------------------*/
+.img-holder{
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background: url(../img/common/indeximg.jpg) 0/cover scroll;
+}
+.video{
+	position: absolute;
+    top: 570px;
+    left: 32%;
+	z-index: 2;
+}
+/*-----------------------for mobile-------------------------------*/
+.jump{
+    display: block;
+    height: 32px;
+    width: 140px;
+    font-size: 14px;
+    padding: 5px 0px;
+    background-color: #337ab7;
+    border-radius: 12px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    top: 32%;
+}
+@media (min-width: 1000px) {
+    .jump {
+        display:none;
+    }
+}
+/*---------------------------block-title------------------------------*/
+.panel-holder{
+    width:100%;
+    height: 950px;
+    margin-bottom: 40px;
+    background: inherit;
+}
+.block-title{
+    width: 100%;
+    height:80px;
+    display: flex;
+}
+.title-item{
+    padding: 0 20px 0 20px;
+    box-sizing:border-box;
+    width:33%;
+    height:100%;
+    display: flex;
+    color:#337ab7;
+    font-size:20px;
+    align-items: center;
+    background: white;
+}
+.left{
+    justify-content: flex-end;
+}
+.middle{
+    justify-content: center;
+}
+.right{
+    flex-direction: flex-start;
+}
+.onshow{
+    background: #eee;
+}
+.title-item a{
+    text-decoration: none;
+    color: inherit;
+}
+.sanjiao{
+    width:0;
+    height:0;
+    border:10px solid transparent;
+    border-bottom:10px solid #337ab7;
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+    -moz-transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+}
+.left:hover .sanjiao{
+    border-top:10px solid #337ab7;
+    border-bottom:10px solid transparent;
+    margin-top: 30px;
+    -moz-transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+}
+/*--------------------------content-------------------------------*/
+.content-holder{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-top:50px;
+    /*background: black;*/
+    height:500px;
+}
+.brief{
+    width: 100%;
+    height: auto;
+    line-height: 20px;
+    font-size:14px;
+    color:black;
+}
+.brief-title{
+    font-size:20px;
+    line-height: 40px;
+    color: #337ab7;
+}
+.instruction{
+    height: auto;
+}
+.square{ 
+	width: 40px;
+	height: 40px;
+	margin-right:20px; 
+	float: left;
+	background-image: url(../img/common/ice.png);
+	background-size:  100% 100%;
+}
+.line-instruction{
+    width: 100%;
+    height:150px;
+    /*background: white;*/
+    display: flex;
+    justify-content: space-between;
+}
+.info-item{
+     display: flex;
+     align-items: center;
+}
+.stage{
+    width: 18%;
+    font-size: 20px;  
+    justify-content: flex-end;
+    /*background: yellow;*/
+}
+.discription{
+    width: 72%;
+    font-size: 14px;  
+    justify-content: flex-start;
+    /*background: green;*/
+}
+/*--------------------------timeline-------------------------------*/
+.normal{color: #337ab7;}
+.current{color: white;}
+.normal.fir{
+	background-image: url(../img/common/fir_normal2.png);
+}
+.current.fir{
+	background: url(../img/common/fir_mouse_on2.png);
+}
+.normal.middle{
+	background-image: url(../img/common/middle_normal2.jpg);
+}
+.current.middle{
+	background-image: url(../img/common/middle_mouse_on2.jpg);
+}
+.normal.final{
+	background-image: url(../img/common/final_normal2.png);
+}
+.current.final{
+	background-image: url(../img/common/final_mouse_on2.png);
+}
+/*----------------------------------------------------------------------*/
+.foot{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    bottom: 0;
+    background: black;
+    display: flex;
+    color: #9f9f9f;
+}
+.foot-left{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot-right{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,98 @@
+﻿html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+/*---------------------------nav-------------------------------*/
+.nav-head{
+    padding:0 15%;
+}
+.navbar-inverse{opacity: 0.8;}
+.logo{
+	height:50px;
+	float: left;
+	margin:0 2px 0 20px;
+}
+.navbar-nav>li {
+    margin-right: 26px;
+}
+/*---------------------------head------------------------------*/
+.img-holder{
+    width: 100%;
+    height:320px;
+    position: relative;
+    overflow: hidden;
+    background: url(../img/common/headimg.jpg) 0/cover scroll;
+}
+/*---------------------------block-title------------------------------*/
+.panel-holder{
+    width:100%;
+    height: 300px;
+    margin-bottom: 40px;
+    background: inherit;
+}
+.content-holder{
+    width: 70%;
+    margin: 0 auto;
+    margin-top:50px;
+    /*background: black;*/
+    height:300px;
+}
+.brief-title{
+    font-size:20px;
+    line-height: 40px;
+    color: #337ab7;
+    margin-bottom:20px;
+}
+.discription{
+    width: 100%;
+    height:180px;
+    font-size: 18px;
+    text-align: center;
+}
+.chanllenge{
+	display: block;
+    width: 180px;
+    margin: 40px auto;
+    background-color: #337ab7;
+    border-radius: 12px;
+    text-align: center;
+    font-size:24px;
+    color:white;
+    height: 80px;
+    line-height: 80px;
+}
+a:hover{
+    text-decoration: none;
+
+}
+/*--------------------------foot----------------------------------*/
+.foot{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    bottom: 0;
+    background: black;
+    display: flex;
+    color: #9f9f9f;
+}
+.foot-left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot-right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
