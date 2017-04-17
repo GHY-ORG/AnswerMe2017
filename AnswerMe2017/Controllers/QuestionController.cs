@@ -79,8 +79,14 @@ namespace AnswerMe2017.Controllers
             return new ResponseWrapper
             {
                 IsSuccessful = true,
-                //Body = QuestionService.Instance.ValidAnswers(answers.AnswerList)
-                Body = result
+                Body = new AnswerResult
+                {
+                    Grade = grade,
+                    UseTime = answers.UseTime,
+                    BestGrade = userInfo.Grade,
+                    BestTime = userInfo.Time,
+                    BestRank = QuestionService.Instance.GetRank(userInfo.Grade)
+                }
             };
         }
     }
