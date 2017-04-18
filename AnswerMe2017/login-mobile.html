@@ -20,41 +20,53 @@
                 <input name="studentnumber" type="number" max="8" min="8" placeholder="研究生仅填学号前八位">
             </div>
             <div class="input-holder">
-                联 系 方 式
+                联 系 电 话
                 <input name="phone" type="number" max="11" min="8">
             </div>
        </div>
-        <a class="btnn login-btn" href="problem.html">登 录</a>
-        <a class="btnn" href="answer.html">返 回</a>
+        <a class="btnn login-btn" href="problem-mobile.html">登 录</a>
+        <a class="btnn" href="answer-mobile.html">返 回</a>
         <script>
-    $(".login-btn").click(function () {
-        var sendData = {
-            Name: $("input[name='name']").val(),
-            StudentNumber: $("input[name='studentnumber']").val(),
-            Phone: $("input[name='phone']").val(),
-        }
+            $(function () {
 
-        $.ajax({
-            method: "POST",
-            url: "api/user/login",
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify(sendData),
-            success: function (result) {
-                console.log(result);
+                $.getJSON("api/user/valid", function (data, textStatus, jqXHR) {
+                    if (data.IsSuccessful) {
+                        $("input[name='name']").val(data.Body.Name);
+                        $("input[name='studentnumber']").val(data.Body.StudentNumber);
+                        $("input[name='phone']").val(data.Body.Phone)
+                    }
+                });
 
-            },
-            error: function (xmlHttpRequest, textStatus, errorthrown) {
-                console.log(xmlHttpRequest);
+                $(".login-btn").click(function () {
+                    var sendData = {
+                        Name: $("input[name='name']").val(),
+                        StudentNumber: $("input[name='studentnumber']").val(),
+                        Phone: $("input[name='phone']").val(),
+                    }
 
-                $("input[name='name']").val("请按格式正确输入");
-                $("input[name='studentnumber']").val("请按格式正确输入");
-                $("input[name='phone']").val("请按格式正确输入");
+                    $.ajax({
+                        method: "POST",
+                        url: "api/user/login",
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: JSON.stringify(sendData),
+                        beforeSend: function () {
+                            $(".login-btn").attr("disabled", "disabled");
+                        },
+                        success: function (result) {
+                            console.log(result);
+                            if (result.IsSuccessful) {
+                                $(window).attr('location', 'problem-mobile.html');
+                            } else {
+                                alert(result.ErrorMessage);
+                                $(".login-btn").removeAttr("disabled");
+                            }
+                        }
 
-            }
-        });
+                    });
 
-    });
+                });
+            })
         </script>
 
     </div>

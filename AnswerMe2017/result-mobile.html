@@ -62,12 +62,12 @@
         <div class="content-holder">
             <div class="brief-title">
                 <img src="img/common/answer.png">
-			    放我答题！
+			    放我答题！<a class="backindex" href="index-mobile.html">回到首页</a>
             </div>
             <div class="discription">
-                <p>本次答题结束</p>
-                <p>本次答题正确率是 所用时间是</p>
-                <p>最佳答题正确率是 所用时间是 目前排名是</p>
+                <p id="para1">本次答题结束</p>
+                <p id="para2">本次答题正确率是 所用时间是</p>
+                <p id="para3">最佳答题正确率是 所用时间是 目前排名是</p>
                 <a href="problem-mobile.html" class="chanllenge">再来一次</a>
             </div>
         </div>   
@@ -85,5 +85,48 @@
             </h5>
         </div>
 	</div>
+    <script type="text/javascript" src="script/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //var sendData = {}
+
+            //$.ajax({
+            //    method: "GET",
+            //    url: "api/question/choicequestion?count=" + 15,
+            //    contentType: "application/json",
+            //    dataType: "json",
+            //    data: JSON.stringify(sendData),
+            //    success: function (result) {
+            //        console.log(result);
+            //        $("#para2").innerText = "本次答题正确率是" + " 所用时间是";
+            //        $("#para3").innerText = "最佳答题正确率是" + " 所用时间是" + "目前排名是";
+            //    }
+            //});
+
+            //从cookie拿到的数据
+            var answerResult = JSON.parse(getCookie("AnswerResult"));
+
+            console.log(answerResult);
+            if (answerResult != null) {
+                var grade = answerResult.Body.Grade * 100 + "";
+                var bestGrade = answerResult.Body.BestGrade * 100 + "";
+                $("#para2")[0].innerHTML = "本次答题正确率是" + grade.substring(0, grade.indexOf(".") + 3) + "% 所用时间是" + answerResult.Body.UseTime + "s";
+                $("#para3")[0].innerHTML = "最佳答题正确率是" + bestGrade.substring(0, bestGrade.indexOf(".") + 3) + "% 所用时间是" + answerResult.Body.BestTime + "s" + " 目前排名是" + answerResult.Body.BestRank;
+            }
+
+            function getCookie(c_name) {
+                if (document.cookie.length > 0) {
+                    c_start = document.cookie.indexOf(c_name + "=");
+                    if (c_start != -1) {
+                        c_start = c_start + c_name.length + 1;
+                        c_end = document.cookie.indexOf(";", c_start);
+                        if (c_end == -1) c_end = document.cookie.length;
+                        return unescape(document.cookie.substring(c_start, c_end));
+                    }
+                }
+                return "";
+            }
+        })
+    </script>
 </body>
 </html>

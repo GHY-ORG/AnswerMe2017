@@ -2,7 +2,7 @@ var questions = document.getElementsByClassName("question");
 var prev = document.getElementById("prev");
 var next = document.getElementById("next");
 var queNumber = document.getElementsByClassName("number");
-var cnt = 15;
+var cnt = 30;
 var current = document.querySelector(".number-onshow");
 var index = parseInt(current.childNodes[0].nodeValue);
 
@@ -34,18 +34,12 @@ function changeTo(now) {
 
 var btn = document.getElementById("finish");
 var answerInput = document.getElementById("answer-input");
-//var options = document.getElementsByClassName("answer");
 var options = document.getElementsByClassName("btnn");
-var answers = new Array('E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E');
+var answers = new Array('E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E','E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E');
 
 var len = options.length;
 for (var i = 0; i < len; i++)
     options[i].onclick = function (e) {
-        /*clearSibling(this.parentNode);
-        this.childNodes[1].className = "btnn answer-on";
-        var whichOpt = this.getAttribute("answer-inde");
-        var whichQue = parseInt(this.parentNode.getAttribute("ques-index"));
-        answers[whichQue - 1] = whichOpt;*/
         clearSibling(this.parentNode.parentNode);
         this.className = "btnn answer-on";
         var whichOpt = this.parentNode.getAttribute("answer-inde");

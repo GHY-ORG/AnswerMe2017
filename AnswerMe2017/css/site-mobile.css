@@ -162,16 +162,26 @@ a{
      align-items: center;
 }
 .stage{
-    width: 18%;
+    width: 17%;
     font-size: 20px;  
     justify-content: flex-end;
     /*background: yellow;*/
 }
+@media (min-width: 1000px){
+    .stage{
+        width:10%;
+    }
+}
 .discription{
-    width: 72%;
+    width: 71%;
     font-size: 14px;  
     justify-content: flex-start;
     /*background: green;*/
+}
+@media (min-width: 1000px){
+    .discription{
+        width:80%;
+    }
 }
 /*--------------------------timeline-------------------------------*/
 .normal{color: #337ab7;}
