@@ -75,7 +75,6 @@ a{
 }
 .block-title{
     width: 100%;
-    /*height:80px;*/
     display: flex;
 }
 .title-item{
@@ -111,7 +110,7 @@ a{
 .title-item a{
     text-decoration: none;
     color: inherit;
-     display: block; 
+    display: block; 
 }
 .sanjiao{
     width:0;
@@ -139,7 +138,6 @@ a{
     height: auto;
     margin: 0 auto;
     margin-top: 20px;
-    /*background: black;*/
     height:500px;
 }
 .brief{
