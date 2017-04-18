@@ -15,11 +15,18 @@ a{
 .nav-head{
     padding:0 15%;
 }
-.navbar-inverse{opacity: 0.8;}
+.navbar-inverse{
+    opacity: 0.8;
+    position: static;
+    margin-bottom: 0;
+}
 .logo{
-	height:50px;
-	float: left;
-	margin:0 2px 0 20px;
+    height:50px;
+    /* float: left; */
+    margin: 0 auto;
+}
+.navbar-header{
+    text-align:center;
 }
 .navbar-nav>li {
     margin-right: 26px;
@@ -31,12 +38,13 @@ a{
     position: relative;
     overflow: hidden;
     background: url(../img/common/indeximg.jpg) 0/cover scroll;
+    margin-top: 0;
 }
 .video{
-	position: absolute;
+    position: absolute;
     top: 570px;
     left: 32%;
-	z-index: 2;
+    z-index: 2;
 }
 /*-----------------------for mobile-------------------------------*/
 .jump{
@@ -67,7 +75,7 @@ a{
 }
 .block-title{
     width: 100%;
-    height:80px;
+    /*height:80px;*/
     display: flex;
 }
 .title-item{
@@ -75,11 +83,17 @@ a{
     box-sizing:border-box;
     width:33%;
     height:100%;
-    display: flex;
     color:#337ab7;
-    font-size:20px;
     align-items: center;
     background: white;
+    text-align: center;
+}
+.title-item img{
+    margin-top:5px;
+    width: 50%;
+}
+.title-item p {
+    margin-bottom: 0;
 }
 .left{
     justify-content: flex-end;
@@ -97,6 +111,7 @@ a{
 .title-item a{
     text-decoration: none;
     color: inherit;
+     display: block; 
 }
 .sanjiao{
     width:0;
@@ -120,35 +135,41 @@ a{
 }
 /*--------------------------content-------------------------------*/
 .content-holder{
-    width: 70%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
-    margin-top:50px;
+    margin-top: 20px;
     /*background: black;*/
     height:500px;
 }
 .brief{
-    width: 100%;
+    width: 90%;
     height: auto;
     line-height: 20px;
     font-size:14px;
     color:black;
+    margin: 0 auto;
 }
 .brief-title{
     font-size:20px;
     line-height: 40px;
     color: #337ab7;
 }
+.second-title{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
 .instruction{
     height: auto;
 }
 .square{ 
-	width: 40px;
-	height: 40px;
-	margin-right:20px; 
-	float: left;
-	background-image: url(../img/common/ice.png);
-	background-size:  100% 100%;
+    width: 40px;
+    height: 40px;
+    margin-right:20px; 
+    float: left;
+    background-image: url(../img/common/ice.png);
+    background-size:  100% 100%;
 }
 .line-instruction{
     width: 100%;
@@ -162,10 +183,11 @@ a{
      align-items: center;
 }
 .stage{
-    width: 17%;
-    font-size: 20px;  
+    width: 23%;
+    font-size: 20px;
     justify-content: flex-end;
     /*background: yellow;*/
+    /*padding-right: 20px;*/
 }
 @media (min-width: 1000px){
     .stage{
@@ -173,7 +195,7 @@ a{
     }
 }
 .discription{
-    width: 71%;
+    width: 60%;
     font-size: 14px;  
     justify-content: flex-start;
     /*background: green;*/
@@ -187,32 +209,34 @@ a{
 .normal{color: #337ab7;}
 .current{color: white;}
 .normal.fir{
-	background-image: url(../img/common/fir_normal2.png);
+    background-image: url(../img/common/fir_normal2.png);
 }
 .current.fir{
-	background: url(../img/common/fir_mouse_on2.png);
+    background: url(../img/common/fir_mouse_on2.png);
 }
 .normal.middle{
-	background-image: url(../img/common/middle_normal2.jpg);
+    background-image: url(../img/common/middle_normal2.jpg);
+    
 }
 .current.middle{
-	background-image: url(../img/common/middle_mouse_on2.jpg);
+    background-image: url(../img/common/middle_mouse_on2.jpg);
 }
 .normal.final{
-	background-image: url(../img/common/final_normal2.png);
+    background-image: url(../img/common/final_normal2.png);
 }
 .current.final{
-	background-image: url(../img/common/final_mouse_on2.png);
+    background-image: url(../img/common/final_mouse_on2.png);
 }
 /*----------------------------------------------------------------------*/
 .foot{
     width: 100%;
-    height: 150px;
+    height: 100px;
     position: relative;
     bottom: 0;
     background: black;
     display: flex;
     color: #9f9f9f;
+    justify-content: center;
 }
 .foot-left{
     width: 35%;
