@@ -214,7 +214,6 @@ $("#finish").click(function () {
 
     var sendData = {};
 
-
     sendData["AnswerList"] = [];
     $.each(questions, function (index, value) {
         sendData["AnswerList"].push({

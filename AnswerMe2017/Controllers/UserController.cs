@@ -21,6 +21,22 @@ namespace AnswerMe2017.Controllers
         [HttpPost]
         public ResponseWrapper PostUserInfo(UserInfo userInfo)
         {
+            if (ModelState.IsValid == false)
+            {
+                string errorMessages = string.Empty;
+
+                foreach (var value in ModelState.Values)
+                    foreach (var error in value.Errors)
+                    {
+                        errorMessages += error.ErrorMessage;
+                        errorMessages += Environment.NewLine;
+                    }
+                return new ResponseWrapper
+                {
+                    IsSuccessful = false,
+                    ErrorMessage = errorMessages,
+                };
+            }
             var token = UserService.Instance.RegisterOrUpdate(userInfo);
             var cookie = new HttpCookie("Token", token);
             cookie.Expires = DateTime.UtcNow + TimeSpan.FromDays(7);
