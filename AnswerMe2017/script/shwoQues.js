@@ -2,7 +2,7 @@ var questions = document.getElementsByClassName("question");
 var prev = document.getElementById("prev");
 var next = document.getElementById("next");
 var queNumber = document.getElementsByClassName("number");
-var cnt = 15;
+var cnt = 30;
 var current = document.querySelector(".number-onshow");
 var index = parseInt(current.childNodes[0].nodeValue);
 
