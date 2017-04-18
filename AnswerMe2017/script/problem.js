@@ -5,7 +5,7 @@
 
     $.ajax({
         method: "GET",
-        url: "api/question/choicequestion?count=" + 15,
+        url: "api/question/choicequestion?count=" + 30,
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(sendData),
@@ -97,6 +97,66 @@ $("#finish").click(function () {
             {
                 "QuestionId": 15,
                 "AnswerBody": answers[14]
+            },
+            {
+                "QuestionId": 16,
+                "AnswerBody": answers[15]
+            },
+            {
+                "QuestionId": 17,
+                "AnswerBody": answers[16]
+            },
+            {
+                "QuestionId": 18,
+                "AnswerBody": answers[17]
+            },
+            {
+                "QuestionId": 19,
+                "AnswerBody": answers[18]
+            },
+            {
+                "QuestionId": 20,
+                "AnswerBody": answers[19]
+            },
+            {
+                "QuestionId": 21,
+                "AnswerBody": answers[20]
+            },
+            {
+                "QuestionId": 22,
+                "AnswerBody": answers[21]
+            },
+            {
+                "QuestionId": 23,
+                "AnswerBody": answers[22]
+            },
+            {
+                "QuestionId": 24,
+                "AnswerBody": answers[23]
+            },
+            {
+                "QuestionId": 25,
+                "AnswerBody": answers[24]
+            },
+            {
+                "QuestionId": 26,
+                "AnswerBody": answers[25]
+            },
+            {
+                "QuestionId": 27,
+                "AnswerBody": answers[26]
+            },
+            {
+                "QuestionId": 28,
+                "AnswerBody": answers[27]
+            },
+            {
+                "QuestionId": 29,
+                "AnswerBody": answers[28]
+            },
+            {
+                "QuestionId": 30,
+                "AnswerBody": answers[29]
             }],
         "UseTime": usetime
     }

@@ -35,7 +35,7 @@ a{
 /*---------------------------block-title------------------------------*/
 .panel-holder{
     width:100%;
-    height: 500px;
+    height: 520px;
     margin-bottom: 40px;
     background: inherit;
 }
@@ -54,7 +54,7 @@ a{
 }
 .problem-holder{
     width: 100%;
-    height:400px;
+    height:450px;
     border-radius: 10px;
     background: white;
     overflow: hidden;
@@ -191,7 +191,7 @@ a{
     position: relative;
     bottom: -20px; 
     width: 100%;
-    height: 50px;
+    height: 100px;
     background: #cacaca;
     display: flex;
     justify-content: space-between;
@@ -207,11 +207,11 @@ a{
 }
 #prev{
     width:120px;
-    line-height: 50px;
+    line-height: 100px;
 }
 #next{
     width:120px;
-    line-height: 50px;
+    line-height: 100px;
 }
 #prev:hover{
     background-color: dimgray;
@@ -219,12 +219,21 @@ a{
 #next:hover{
     background-color: dimgray;
 }
+.number-box{
+    width: calc( 100% - 240px );
+    display: flex;
+    flex-wrap: wrap;
+}
 .number{
-    width: 24px;
-    height: 24px;
+    margin-left: calc( (6.66% - 28px) / 2 );
+    margin-right:calc( (6.66% - 28px) / 2 );
+    margin-bottom:3px;
+    margin-top:3px;
+    width: 28px;
+    height: 28px;
     font-size: 14px;
-    border-radius: 12px;
-    line-height: 24px;
+    border-radius: 14px;
+    line-height: 28px;
     background: white;
     cursor: pointer;
 }
@@ -235,17 +244,9 @@ a{
     color:white;
     background: #297fbf;
 }
-
-    .number-onshow:hover {
-        color: white;
-        background: #2873ac;
-    }
-    /*--------------for input--------------------------------*/
-    #time-input {
-        display: none;
-    }
-#answer-input{
-    display: none;
+.number-onshow:hover {
+    color: white;
+    background: #2873ac;
 }
 /*--------------------------foot----------------------------------*/
 .foot{
