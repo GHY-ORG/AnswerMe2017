@@ -37,6 +37,13 @@ namespace AnswerMe2017.Controllers
                     ErrorMessage = errorMessages,
                 };
             }
+            var userInfoOld = UserService.Instance.GetUserInfo(userInfo.StudentNumber);
+            if (userInfoOld != null)
+            {
+                userInfo.Grade = userInfoOld.Grade;
+                userInfo.Time = userInfoOld.Time;
+            }
+
             var token = UserService.Instance.RegisterOrUpdate(userInfo);
             var cookie = new HttpCookie("Token", token);
             cookie.Expires = DateTime.UtcNow + TimeSpan.FromDays(7);
