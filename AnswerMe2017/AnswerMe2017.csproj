@@ -108,6 +108,7 @@
     <Content Include="css\reset.css" />
     <Content Include="css\result-mobile.css" />
     <Content Include="css\result.css" />
+    <Content Include="css\site-mobile.css" />
     <Content Include="css\site.css" />
     <Content Include="DbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -126,17 +127,25 @@
     <Content Include="img\common\back.jpg" />
     <Content Include="img\common\cut.png" />
     <Content Include="img\common\final_mouse_on.png" />
+    <Content Include="img\common\final_mouse_on2.png" />
     <Content Include="img\common\final_normal.png" />
+    <Content Include="img\common\final_normal2.png" />
     <Content Include="img\common\fir_mouse_on.png" />
+    <Content Include="img\common\fir_mouse_on2.png" />
     <Content Include="img\common\fir_normal.png" />
+    <Content Include="img\common\fir_normal2.png" />
+    <Content Include="img\common\headimg-mobile.jpg" />
     <Content Include="img\common\headimg.jpg" />
     <Content Include="img\common\ice.png" />
     <Content Include="img\common\indeximg.jpg" />
     <Content Include="img\common\logo.png" />
     <Content Include="img\common\logo2.png" />
     <Content Include="img\common\middle_mouse_on.jpg" />
+    <Content Include="img\common\middle_mouse_on2.jpg" />
     <Content Include="img\common\middle_normal.jpg" />
+    <Content Include="img\common\middle_normal2.jpg" />
     <Content Include="img\common\players.png" />
+    <Content Include="img\common\players_no.png" />
     <Content Include="img\common\rank.png" />
     <Content Include="img\common\rules.png" />
     <Content Include="img\common\timeline.png" />
@@ -164,6 +173,7 @@
     <Content Include="script\problem.js" />
     <Content Include="script\recordTime.js" />
     <Content Include="script\showTop10.js" />
+    <Content Include="script\shwoQues-mobile.js" />
     <Content Include="script\shwoQues.js" />
     <Content Include="script\store.legacy.min.js" />
     <Content Include="Web.config" />
