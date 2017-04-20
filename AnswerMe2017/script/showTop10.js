@@ -4,7 +4,7 @@
         url: "api/user/top10",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(),
+        // data: JSON.stringify(),
         success: function (result) {
             //console.log(result);
             updateTop10(result);
