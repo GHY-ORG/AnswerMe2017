@@ -106,6 +106,7 @@
     <Content Include="css\problem-mobile.css" />
     <Content Include="css\problem.css" />
     <Content Include="css\reset.css" />
+    <Content Include="css\common.css" />
     <Content Include="css\result-mobile.css" />
     <Content Include="css\result.css" />
     <Content Include="css\site-mobile.css" />
